@@ -1,11 +1,5 @@
 
 <?php
-$space_desktop = ( $settings->post_grid_count['desktop'] - 1 ) * $settings->post_spacing;
-$space_tablet = ( $settings->post_grid_count['tablet'] - 1 ) * $settings->post_spacing;
-$space_mobile = ( $settings->post_grid_count['mobile'] - 1 ) * $settings->post_spacing;
-$post_columns_desktop = ( 100 - $space_desktop ) / $settings->post_grid_count['desktop'];
-$post_columns_tablet = ( 100 - $space_tablet ) / $settings->post_grid_count['tablet'];
-$post_columns_mobile = ( 100 - $space_mobile ) / $settings->post_grid_count['mobile'];
 $responsive_filter = $settings->responsive_filter;
 ?>
 <?php
@@ -587,7 +581,6 @@ FLBuilderCSS::dimension_field_rule( array(
     <?php } ?>
 	<?php if( 'grid' == $settings->layout ) { ?>
 	margin-bottom: <?php echo $settings->post_spacing; ?>%;
-	width: <?php echo $post_columns_desktop; ?>%;
 	<?php } ?>
 	<?php if( 'carousel' == $settings->layout ) { ?>
 	margin-left: <?php echo ($settings->post_spacing / 2); ?>%;
@@ -608,7 +601,7 @@ FLBuilderCSS::border_field_rule( array(
 ?>
 
 .fl-node-<?php echo $id; ?> .pp-grid-space {
-	width: <?php echo $settings->post_spacing; ?>%;
+	width: 0%;
 }
 
 .fl-node-<?php echo $id; ?> .pp-content-post .pp-content-grid-more-link,
@@ -727,10 +720,6 @@ FLBuilderCSS::dimension_field_rule( array(
 		<?php } ?>
 	}
 
-	.fl-node-<?php echo $id; ?> .pp-content-grid-post {
-		width: <?php echo $post_columns_tablet; ?>%;
-	}
-
 	.fl-node-<?php echo $id; ?> .pp-content-grid-post:nth-of-type(<?php echo $settings->post_grid_count['desktop']; ?>n+1){
 	    clear: none;
 	}
@@ -765,9 +754,6 @@ FLBuilderCSS::dimension_field_rule( array(
 		<?php } ?>
 	}
 
-	.fl-node-<?php echo $id; ?> .pp-content-grid-post {
-		width: <?php echo $post_columns_mobile; ?>%;
-	}
 	.fl-node-<?php echo $id; ?> .pp-content-grid-post:nth-of-type(<?php echo $settings->post_grid_count['tablet']; ?>n+1) {
 	    clear: none;
 	}

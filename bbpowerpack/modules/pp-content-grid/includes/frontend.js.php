@@ -1,8 +1,5 @@
 
 <?php
-$space_desktop	= ( $settings->post_grid_count['desktop'] - 1 ) * $settings->post_spacing;
-$space_tablet 	= ( $settings->post_grid_count['tablet'] - 1 ) * $settings->post_spacing;
-$space_mobile 	= ( $settings->post_grid_count['mobile'] - 1 ) * $settings->post_spacing;
 $speed          = ! empty( $settings->transition_speed ) ? $settings->transition_speed * 1000 : 3000;
 $slide_speed    = ( isset( $settings->slides_speed ) && ! empty( $settings->slides_speed ) ) ? $settings->slides_speed * 1000 : 1000;
 $page_arg	 	= is_front_page() ? 'page' : 'paged';
@@ -33,12 +30,6 @@ var ppcg_<?php echo $id; ?> = '';
 		page: '<?php echo $paged; ?>',
 		is_tax: false,
 		is_author: false,
-		postSpacing: '<?php echo $settings->post_spacing; ?>',
-		postColumns: {
-			desktop: <?php echo $settings->post_grid_count['desktop']; ?>,
-			tablet: <?php echo $settings->post_grid_count['tablet']; ?>,
-			mobile: <?php echo $settings->post_grid_count['mobile']; ?>,
-		},
 		matchHeight: '<?php echo $settings->match_height; ?>',
 		<?php echo ( isset( $settings->post_grid_filters_display ) && 'yes' == $settings->post_grid_filters_display ) ? 'filters: true' : 'filters: false'; ?>,
 		//defaultFilter: '<?php echo isset( $settings->post_grid_filters_default ) && ! empty( $settings->post_grid_filters_default ) ? $settings->post_grid_filters_default : ''; ?>',

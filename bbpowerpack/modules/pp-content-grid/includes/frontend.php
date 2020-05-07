@@ -185,7 +185,7 @@ $query = FLBuilderLoop::query( $settings );
 			?>
 
 			<?php if ( $settings->layout == 'grid' ) { ?>
-			<div class="pp-grid-space"></div>
+			<div class="pp-grid-space" style="width:0%"></div>
 			<?php } ?>
 
 		<?php if ( $settings->layout == 'carousel' ) { ?>

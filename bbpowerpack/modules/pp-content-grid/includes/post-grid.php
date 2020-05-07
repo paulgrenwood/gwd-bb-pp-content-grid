@@ -31,7 +31,7 @@ if ( $settings->post_type == 'product' ) {
 ?>
 <div class="pp-content-post pp-content-grid-post pp-grid-<?php echo $settings->post_grid_style_select; ?> <?php echo join( ' ', get_post_class() ); ?>" itemscope itemtype="<?php PPContentGridModule::schema_itemtype(); ?>" data-id="<?php echo $post_id; ?>">
 
-	<?php PPContentGridModule::schema_meta(); ?>
+	<?php /* PPContentGridModule::schema_meta(); */ ?>
 
 	<?php if ( 'style-9' == $settings->post_grid_style_select ) {
 		include $module_dir . 'includes/post-tile.php';
